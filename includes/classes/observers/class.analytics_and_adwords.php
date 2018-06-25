@@ -11,7 +11,7 @@ class analytics_and_adwords extends base {
 
     function __construct() {
         global $zco_notifier;
-        LogThis('Start: ' . __METHOD__);
+        // LogThis('Start: ' . __METHOD__);
         $zco_notifier->attach($this, array('NOTIFY_HEADER_TIMEOUT'));
 
         $this->attach($this, array(
@@ -20,31 +20,14 @@ class analytics_and_adwords extends base {
         ));
     }
 
-    function getID() {
-        $id = '';
-        LogThis('Start: ' . __METHOD__);
-        if (isset($_REQUEST['products_id'])) {
-            if (is_array($_REQUEST['products_id'])) {  $id = explode(":", $_REQUEST['products_id'][0]);
-            } else {  $id = explode(":", $_REQUEST['products_id']);  }
-        } else {
-            if (isset($_REQUEST['product_id'])) {
-                if (is_array($_REQUEST['product_id'])) { $id = explode(":", $_REQUEST['product_id'][0]);
-                } else {  $id = explode(":", $_REQUEST['product_id']);  }
-            }
-        }
-        $id = (int)$id[0];
-        if ($id === 0) $id = "";
-   return $id;
-    }
-
    function update(&$callingClass, $notifier, $paramsArray) {
       global $db, $analytics;
 
-      LogThis('Start: ' . __METHOD__ . ' ' . $notifier);
+      // LogThis('Start: ' . __METHOD__ . ' ' . $notifier);
       switch ($notifier) {
         case 'NOTIFY_HEADER_START_CHECKOUT_SUCCESS': //  All Checkout complete/successful 
           $order_summary = $_SESSION['order_summary'];
-          LogThis('Order Summary $_SESSION: ' . print_r($order_summary,true));
+          // LogThis('Order Summary $_SESSION: ' . print_r($order_summary,true));
           $affiliation = (string) $order_summary['payment_module_code'] ;
           $coupon = isset($order_summary['coupon_code']) ? $order_summary['coupon_code'] : "n/a";
           $analytics['transaction'] = array('id' => (string)$order_summary['order_number'],

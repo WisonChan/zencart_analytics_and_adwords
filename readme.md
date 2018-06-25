@@ -4,8 +4,7 @@ Tested with Zen Cart 1.5.5
 ## Important Notice
 This plugin is a standalone solution for Google Analytics meant to replace any other Zen Cart plugins you might use right now. The module is not compatible with any of the other Analytics plugins so please ensure you remove them from your installation.
 
-**Disclaimer**
-Use at your own risk and please test prior to installing on a live environment. I recommend setting up a Testing Property in Google Analytics so you can observe tracking behaviour prior to deployment.
+**Disclaimer**: Use at your own risk and please test prior to installing on a live environment. I recommend setting up a Testing Property in Google Analytics so you can observe tracking behaviour prior to deployment.
 
 ## Introduction
 This module utilises the global site tag (gtag.js) JavaScript tagging framework for Google Analytics and Adwords Conversion Tracking.

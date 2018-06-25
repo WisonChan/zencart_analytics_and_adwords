@@ -8,7 +8,7 @@
  * @version $Id: jscript_analytics_and_adwords.php 2018-06-25 20:47:36Z kanine $
  */
 
-LogThis('Start: ' . __FILE__);
+// LogThis('Start: ' . __FILE__);
 
 if ((!defined('GTAG_ANALYTICS') || GTAG_ANALYTICS === "UA-XXXXXXXX-X")) { 
         echo '<script>alert("The Google Analytics trackingID is not yet defined in\n /includes/extra_datafiles/ec_analytics.php")</script>' ;    
@@ -33,7 +33,7 @@ if ((!defined('GTAG_ANALYTICS') || GTAG_ANALYTICS === "UA-XXXXXXXX-X")) {
     // global $analytics, $cID;
     $gtagCustomerID = ( isset($_SESSION['customer_id']) ) ? "customerID#".$_SESSION['customer_id'] : "guest";
     $analytics = $_SESSION['analytics'];
-    LogThis('Analytics Array: ' . print_r($analytics,true));
+    // LogThis('Analytics Array: ' . print_r($analytics,true));
 ?>
 
  <?php if ( $analytics['action'] == 'Checkout Success' && count($analytics['items']) >= 1 ): ?>
@@ -51,9 +51,9 @@ if ((!defined('GTAG_ANALYTICS') || GTAG_ANALYTICS === "UA-XXXXXXXX-X")) {
     <?php 
       $isFirst = true;
       $gtagItemTracking = '';
-      LogThis('Items: ' . print_r($analytics['items'],true));
+      // LogThis('Items: ' . print_r($analytics['items'],true));
       foreach ( $analytics['items'] as $item ) {
-        LogThis('This Item: ' . print_r($item,true));
+        // LogThis('This Item: ' . print_r($item,true));
         $gtagItemTracking .= ( $isFirst ? '' : ',') . PHP_EOL;
         $gtagItemTracking .= '{"id": "' . $item['id'] . '",' . PHP_EOL;
         $gtagItemTracking .= '"name": "' . addslashes($item['name']) . '",' . PHP_EOL;
