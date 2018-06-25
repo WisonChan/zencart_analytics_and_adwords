@@ -18,7 +18,7 @@ Please report any issues you may find in GitHub:
 https://github.com/kanine/zencart_analytics_and_adwords/issues
 
 ## Installation / Upgrade 
-1. Unzip the plugin (or clone from GitHub
+1. Unzip the plugin (or clone from GitHub)
 2. Copy /includes/extra_datafiles/dist-analytics_and_adwords.php to /includes/extra_datafiles/analytics_and_adwords.php
 3. Edit the file /includes/extra_datafiles/analytics_and_adwords.php to include your tracking IDs (from Google Analytics and Adwords) 
 4. Rename the folder '/includes/templates/YOUR_TEMPLATE' so that it matches the name of your template/theme 
